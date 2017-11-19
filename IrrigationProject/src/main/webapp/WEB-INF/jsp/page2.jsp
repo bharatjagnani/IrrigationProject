@@ -3,8 +3,5 @@
 	<%@ page contentType="text/html; charset=UTF-8"%>
 	<meta charset =UTF-8></meta>
  <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%-- Hello World Tiles!
-<spring:message code="label.firstname"/>
-<spring:message code="label.lastname"/> --%>
 
-<%@ include file="/WEB-INF/templates/login.html" %>
+<%@ include file="/WEB-INF/templates/Page2.html" %>

@@ -16,6 +16,15 @@ public class IrrigationController {
 		testing.setAge(27);
 		testing.setName("Bharat");
 		model.addAttribute(testing);
-		return "irrigation.testing";
+		return "irrigation.loginPage";
+	}
+	@RequestMapping("/page2")
+	String page2(Model model) {
+		System.out.println("page2");
+		Testing testing = new Testing();
+		testing.setAge(27);
+		testing.setName("Bharat");
+		model.addAttribute(testing);
+		return "irrigation.page2";
 	}
 }
