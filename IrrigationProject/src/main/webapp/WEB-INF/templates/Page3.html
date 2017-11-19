@@ -1,0 +1,122 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#menu1').click(function() {
+		$('#menutab1').removeClass('active');
+		$('#menutab2').addClass('active');
+		$('#tab1').addClass('hide');
+		$('#tab2').toggleClass('hide');
+	});
+	
+	$('#home').click(function() {
+		$('#menutab2').removeClass('active');
+		$('#menutab1').addClass('active');
+		$('#tab2').addClass('hide');
+		$('#tab1').removeClass('hide');
+	});
+});
+</script>
+</head>
+<body style="background-image: url('background.jpg');background-size: cover;">
+	<div class="jumbotron" style="background-image: url('background_0.jpg');background-size: cover;">
+		<div class="myheader"><center><h2 style="color:white;">Dhom Irrigation Division Satara</h2></center></div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-5">
+			<ul class="nav nav-tabs">
+				<li class="active"><a data-toggle="tab" href="#home" style="color:white;background-color:#ff00;font-weight:bold;">Section 1</a></li>
+				<li><a data-toggle="tab" href="#menu1" style="color:white;background-color:#ff00;font-weight:bold;">Section 2</a></li>
+			</ul>
+			<div class="tab-content">
+			<div id="home" class="tab-pane fade in active">
+			  <table class="table table-bordered" style="background:white; width:auto;">
+				<tr>
+					<td rowspan="2">Sr. No.</td>
+					<td rowspan="2">Plot No.</td>
+					<td rowspan="2">Total Plot Area (in hectare)</td>
+					<td colspan="2"><center>Panchanama</center></td>
+					<td rowspan="2">Owner</td>
+					<td rowspan="2">Present Working</td>
+					<td rowspan="2">Approved Area</td>
+				</tr>
+				<tr>
+					<td>Km</td>
+					<td>Sr.No.</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td><input type="text" size="5"/></td>
+					<td><input type="text" size="5"/></td>
+					<td><input type="text" size="4"/></td>
+					<td><input type="text" size="4"/></td>
+					<td><input type="text" size="10"/></td>
+					<td><input type="text" size="10"/></td>
+					<td><input type="text" size="10"/></td>
+				</tr>
+			</table>
+			<div class="buttons">
+				<button name="save"> Save </button>
+				<button name="saveandnext"> Save And Next </button>
+				<button name="reset"> Reset </button>
+				<button name="cancel"> Cancel </button>
+			</div>
+			</div>
+			<div id="menu1" class="tab-pane fade">
+			  <table id="home" class="table table-bordered" style="background:white; width:auto; margin-top: -50px;">
+				<tr>
+					<td colspan="2">Farm Counted Area</td>
+					<td rowspan="2">Crop</td>
+					<td colspan="2">Water Charge Per</td>
+					<td rowspan="2">Per Farm Water Cost</td>
+					<td rowspan="2">Per Worker Cost</td>
+					<td rowspan="2">Local Sub tax</td>
+					<td rowspan="2">Remarks</td>
+				</tr>
+				<tr>
+					<td>hctr</td>
+					<td>Aar</td>
+					<td>Rs.</td>
+					<td>Paise</td>
+				</tr>
+				<tr>
+					<td><input type="text" size="3"/></td>
+					<td><input type="text" size="3"/></td>
+					<td><input type="text" size="10"/></td>
+					<td><input type="text" size="3"/></td>
+					<td><input type="text" size="3"/></td>
+					<td><input type="text" size="10"/></td>
+					<td><input type="text" size="10"/></td>
+					<td><input type="text" size="10"/></td>
+					<td><input type="text" size="10"/></td>
+				</tr>
+			</table>			
+			<div class="buttons">
+				<button name="save">Save</button>
+				<button name="saveandnext">Save And Next</button>
+				<button name="reset">Reset</button>
+				<button name="cancel">Cancel</button>
+			</div>
+			</div>
+			
+			</div>
+			
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+	</div>
+</body>
+</html>

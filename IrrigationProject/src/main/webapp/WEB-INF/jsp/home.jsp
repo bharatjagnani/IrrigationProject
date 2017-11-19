@@ -6,3 +6,5 @@
 Hello World Tiles!
 <spring:message code="label.firstname"/>
 <spring:message code="label.lastname"/>
+
+<%@ include file="/WEB-INF/templates/login.html" %>
