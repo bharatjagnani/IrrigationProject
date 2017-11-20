@@ -5,10 +5,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.model.Testing;
+import com.example.model.User;
+import com.example.model.UserResponse;
+import com.example.service.api.IrrigationService;
+import com.example.service.impl.IrrigationServiceImpl;
 
 @Controller
 public class IrrigationController {
 
+
+	
 	@RequestMapping("/testing")
 	String testing(Model model) {
 		System.out.println("testing");
@@ -16,6 +22,11 @@ public class IrrigationController {
 		testing.setAge(27);
 		testing.setName("Bharat");
 		model.addAttribute(testing);
+		IrrigationService irrigationService = new IrrigationServiceImpl();
+		UserResponse userResp =  irrigationService.userDetails();
+		for (User userResps : userResp.getUsers()) {
+			System.out.println(userResps.getFirstName());
+		}
 		return "irrigation.loginPage";
 	}
 	@RequestMapping("/page2")
