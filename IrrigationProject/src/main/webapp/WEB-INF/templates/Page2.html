@@ -18,13 +18,13 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-3"></div>
-			<div class="col-sm-6">
-			<table class="table table-bordered" style="background:white;">
+			<div class="col-sm-12" align="center">
+			<table class="table table-bordered" style="width:fit-content; background:white;">
 				<tr>
 					<td>Division</td>
 					<td>
 						<select>
+							<option value="">--Select--</option>
 							<option value="1">Dhom Irrigation Division Satara</option>
 						</select>
 					</td>
@@ -33,6 +33,7 @@
 					<td>Sub-Division</td>
 					<td>
 						<select>
+							<option value="">--Select--</option>
 							<option value="1">Irrigation Sub-Division, Masur</option>
 						</select>
 					</td>
@@ -41,6 +42,7 @@
 					<td>Branch</td>
 					<td>
 						<select>
+							<option value="">--Select--</option>
 							<option value="1">Araphal Irrigation Masur Branch 3</option>
 						</select>
 					</td>
@@ -49,48 +51,51 @@
 					<td>Season</td>
 					<td>
 						<select>
+							<option value="">--Select--</option>
 							<option value="kharif">Rabi</option>
 							<option value="kharif">Kharif</option>
 							<option value="kharif">Half Yearly</option>
 							<option value="kharif">Yearly</option>
+							<option value="other">Other</option>
 						</select>
+						<input type="text" class="hide" id="other_season" name="other_season" />
 					</td>
-				</tr>
-				<tr>
-					<td>Name of Village Year</td>
-					<td><input type="text" id="nameOfVillageYear" /></td>
 				</tr>
 				<tr>
 					<td>Year</td>
 					<td>
 						<select>
-							<option value="2014">2014</option>
-							<option value="2015">2015</option>
-							<option value="2016">2016</option>
-							<option value="2017">2017</option>
+							<option value="0">--Select--</option>
+							<option value="2014">2014 - 2015</option>
+							<option value="2015">2015 - 2016</option>
+							<option value="2016">2016 - 2017</option>
+							<option value="2017">2017 - 2018</option>
 						</select>
 					</td>
+				</tr>
+				<tr>
+					<td>Name of Village</td>
+					<td><input type="text" id="nameOfVillageYear" /></td>
 				</tr>
 				<tr>
 					<td>Source</td>
 					<td>
 						<select>
+							<option value="0">--Select--</option>
 							<option value="canal">Canal</option>
 							<option value="well">Well</option>
+							<option value="river">River</option>
 						</select>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2"> <center>
-						<input type="submit" value=" Submit " id="submit" onclick="location.href='page3.html';"/>
-						<input type="reset" value=" Reset " id="reset" />
-						</center>
+					<td colspan="2" align="center">
+						<input type="submit" value=" New Application " id="newapp" onclick="location.href='/page3';"/>
+						<input type="button" value=" Search Application " id="search" />
 					</td>
 				</tr>
 			</table>
-			</div>
-			<div class="col-sm-3"></div>
-			
+			</div>			
 		</div>
 	</div>
 </body>
