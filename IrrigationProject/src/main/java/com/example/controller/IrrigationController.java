@@ -55,7 +55,7 @@ public class IrrigationController {
 		return "irrigation.loginPage";
 	}
 	
-	@RequestMapping("/page2")
+	@RequestMapping("/irrigation/page2")
 	String page2(Model model) {
 		System.out.println("page2");
 		Testing testing = new Testing();
@@ -65,7 +65,7 @@ public class IrrigationController {
 		return "irrigation.page2";
 	}
 	
-	@RequestMapping("/page3")
+	@RequestMapping("/irrigation/page3")
 	String page3(Model model) {
 		System.out.println("page3");
 		Testing testing = new Testing();

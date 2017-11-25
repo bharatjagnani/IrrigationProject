@@ -71,7 +71,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();*/
         System.out.println("Authentication");
         http.authorizeRequests()
-        .antMatchers("/","/page2").access("hasRole('ROLE_ADMIN')")
+        .antMatchers("/","/irrigation/**").access("hasRole('ROLE_ADMIN')")
         .anyRequest().permitAll()
         .and()
           .formLogin().loginPage("/login")
