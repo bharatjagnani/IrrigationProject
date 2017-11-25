@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.model.User;
+import com.example.model.User1;
 import com.example.model.UserResponse;
 import com.example.service.api.IrrigationService;
 
@@ -27,11 +27,11 @@ public class IrrigationServiceImpl implements IrrigationService {
 			try {
 				 con = DriverManager.getConnection(connectionString, username, password);
 				System.out.println("Connected");
-				ArrayList<User> users = new ArrayList<User>();
+				ArrayList<User1> users = new ArrayList<User1>();
 				stmt = con.createStatement();
 				ResultSet rs = stmt.executeQuery("select * from users");
 				while(rs.next()) {
-					User user = new User();
+					User1 user = new User1();
 					user.setFirstName(rs.getString("first_name"));
 					user.setLastName(rs.getString("last_name"));
 					user.setUserId(rs.getString("user_id"));

@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.model.Testing;
-import com.example.model.User;
+import com.example.model.User1;
 import com.example.model.UserResponse;
 import com.example.service.api.IrrigationService;
 import com.example.service.impl.IrrigationServiceImpl;
@@ -13,6 +13,31 @@ import com.example.service.impl.IrrigationServiceImpl;
 @Controller
 public class IrrigationController {
 
+	@RequestMapping("/")
+	String home() {
+		System.out.println("hbjsnsjn");
+		return "irrigation.page2";
+	}
+	/*@RequestMapping("/hello")
+	String hello() {
+		System.out.println("hello");
+		return "app.hello";
+	}*/
+	@RequestMapping("/login")
+	String login() {
+		System.out.println("login");
+		return "irrigation.loginPage";
+	}
+	@RequestMapping("/logout")
+	String logout() {
+		System.out.println("logout");
+		return "irrigation.homePage";
+	}
+	@RequestMapping("/403")
+	String error() {
+		System.out.println("403");
+		return "irrigation.error";
+	}
 
 	
 	@RequestMapping("/testing")
@@ -24,7 +49,7 @@ public class IrrigationController {
 		model.addAttribute(testing);
 		IrrigationService irrigationService = new IrrigationServiceImpl();
 		UserResponse userResp =  irrigationService.userDetails();
-		for (User userResps : userResp.getUsers()) {
+		for (User1 userResps : userResp.getUsers()) {
 			System.out.println(userResps.getFirstName());
 		}
 		return "irrigation.loginPage";

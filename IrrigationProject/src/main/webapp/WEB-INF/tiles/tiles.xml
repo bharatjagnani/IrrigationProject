@@ -21,4 +21,9 @@
 	<definition name="irrigation.page3" template="/WEB-INF/jsp/page3.jsp">		
 	</definition>
 	
+	<definition name="irrigation.error" template="/WEB-INF/jsp/error.jsp">		
+	</definition>
+	<definition name="irrigation.homePage" template="/WEB-INF/jsp/homePage.jsp">		
+	</definition>
+	
 </tiles-definitions>
