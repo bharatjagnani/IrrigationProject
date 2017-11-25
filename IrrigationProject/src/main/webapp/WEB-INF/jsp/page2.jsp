@@ -25,12 +25,12 @@ select {
 }
 </style>
 </head>
-<body style="background-image: url('/images/background.jpg');background-size: cover;">
-	<div class="jumbotron" style="background-image: url('/images/background_0.jpg');background-size: cover;">
-		<div class="myheader text-center"><h2 style="color:white;"><spring:message code="label.header"/></h2></div>
-	</div>
-
+<body style="background-image: url('/images/background.jpg');background-size: cover;">	
+	<%@ include file="/WEB-INF/jsp/header.jsp" %>
 	<div class="container">
+		<div class="jumbotron" style="background: border-box;">
+			<div class="myheader text-center"><h2 style="color:white;"><spring:message code="label.header"/></h2></div>
+		</div>
 		<div class="row">
 			<div class="col-sm-12" align="center">
 			<table class="table table-bordered" style="width:fit-content; background:white;">
@@ -104,7 +104,7 @@ select {
 				</tr>
 				<tr>
 					<td colspan="2" align="center">
-						<input type="submit" value="<spring:message code="label.newapp"/>" id="newapp" onclick="location.href='/page3';"/>
+						<input type="submit" value="<spring:message code="label.newapp"/>" id="newapp" onclick="location.href='/irrigation/page3';"/>
 						<input type="button" value="<spring:message code="label.searchapp"/>" id="search" />
 					</td>
 				</tr>
