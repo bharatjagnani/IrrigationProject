@@ -31,7 +31,7 @@ public class IrrigationController {
 	@RequestMapping("/logout")
 	String logout() {
 		System.out.println("logout");
-		return "irrigation.homePage";
+		return "irrigation.loginPage";
 	}
 	@RequestMapping("/403")
 	String error() {

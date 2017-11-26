@@ -24,11 +24,14 @@ $(document).ready(function(){
 	    var optionSelected = $("option:selected", this);
 	    var valueSelected = this.value;
 	    if(valueSelected == "logout") {
-			location.href="/logout";
+			location.href="javascript:document.getElementById('logout').submit()";
 		}
 	});		
 });
 </script>
+<form id="logout" action="/logout" method="POST" >
+  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+</form>
 <div class="topnav">
 	<div align="right">
 		<select class="usermenu">
