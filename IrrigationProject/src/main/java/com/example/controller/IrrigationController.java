@@ -1,18 +1,21 @@
 package com.example.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.model.Testing;
-import com.example.model.User1;
+import com.example.model.User;
 import com.example.model.UserResponse;
 import com.example.service.api.IrrigationService;
-import com.example.service.impl.IrrigationServiceImpl;
 
 @Controller
 public class IrrigationController {
 
+	@Autowired
+	IrrigationService irrigationService;
+	
 	@RequestMapping("/")
 	String home() {
 		System.out.println("hbjsnsjn");
@@ -47,11 +50,18 @@ public class IrrigationController {
 		testing.setAge(27);
 		testing.setName("Bharat");
 		model.addAttribute(testing);
-		IrrigationService irrigationService = new IrrigationServiceImpl();
 		UserResponse userResp =  irrigationService.userDetails();
-		for (User1 userResps : userResp.getUsers()) {
-			System.out.println(userResps.getFirstName());
+		for (User userResps : userResp.getUsers()) {
+			System.out.println(userResps.getUserName());
 		}
+		return "irrigation.loginPage";
+	}
+	@RequestMapping("/registerUser")
+	String registerUser(Model model) {
+		System.out.println("registerUser");
+		
+		int count=  irrigationService.RegisterUser();
+		System.out.println(count);
 		return "irrigation.loginPage";
 	}
 	

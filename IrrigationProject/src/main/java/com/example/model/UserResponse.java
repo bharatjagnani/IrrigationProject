@@ -1,16 +1,16 @@
 package com.example.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class UserResponse {
 
-	ArrayList<User1> users;
+	List<User> users;
 
-	public ArrayList<User1> getUsers() {
+	public List<User> getUsers() {
 		return users;
 	}
 
-	public void setUsers(ArrayList<User1> users) {
+	public void setUsers(List<User> users) {
 		this.users = users;
 	}
 	
