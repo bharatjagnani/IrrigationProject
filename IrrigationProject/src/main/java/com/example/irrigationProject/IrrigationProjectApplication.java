@@ -21,7 +21,7 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 @Configuration
 @EnableAutoConfiguration
 @EntityScan(basePackages = "com.example.model")
-@ComponentScan({"com.example.irrigationProject","com.example.controller"})
+@ComponentScan({"com.example"})
 public class IrrigationProjectApplication extends WebMvcConfigurerAdapter{
 
 	public static void main(String[] args) {
