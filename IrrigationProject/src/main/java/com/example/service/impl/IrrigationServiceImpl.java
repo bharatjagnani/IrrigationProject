@@ -1,37 +1,48 @@
 package com.example.service.impl;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.example.model.User;
 import com.example.model.UserResponse;
 import com.example.service.api.IrrigationService;
 
+@Repository
 public class IrrigationServiceImpl implements IrrigationService {
 
-	private static String username = "root";
+	@Autowired
+	@Qualifier("mysqlJdbcTemplate")
+	private JdbcTemplate jdbcTemplate = null;
+	
+	/*private static String username = "root";
 	private static String password = "";
-	private static String connectionString = "jdbc:mysql://localhost/irrigation";
+	private static String connectionString = "jdbc:mysql://localhost/irrigation";*/
 	
 	public UserResponse userDetails(){
 		
-		UserResponse userDetails = new UserResponse();
+		UserResponse users = new UserResponse();
+		StringBuilder sb = new StringBuilder();
+		sb.append("Select * from users");
+	     List<User> userList= jdbcTemplate.query(sb.toString(), new UserMapper());
+	     users.setUsers(userList);
+	     return users;
+		/*UserResponse userDetails = new UserResponse();
 		Statement stmt = null;
 		Connection con = null;
 		
 			try {
 				 con = DriverManager.getConnection(connectionString, username, password);
 				System.out.println("Connected");
-				ArrayList<User> users = new ArrayList<User>();
+				ArrayList<User1> users = new ArrayList<User1>();
 				stmt = con.createStatement();
 				ResultSet rs = stmt.executeQuery("select * from users");
 				while(rs.next()) {
-					User user = new User();
+					User1 user = new User1();
 					user.setFirstName(rs.getString("first_name"));
 					user.setLastName(rs.getString("last_name"));
 					user.setUserId(rs.getString("user_id"));
@@ -62,10 +73,18 @@ public class IrrigationServiceImpl implements IrrigationService {
 				}
 				
 			}
-		
-			return userDetails;
+*/		
+			
 		}
+	public Integer RegisterUser(){
 	
-	
-	
+		StringBuilder sb = new StringBuilder();
+		sb.append("insert into users(username,email,password) values(?,?,?)");
+		List<Object> values = new ArrayList<Object>();
+		values.add("xyz");
+		values.add("xyz");
+		values.add("13");
+	     int rowCount= jdbcTemplate.update(sb.toString(), values.toArray());
+	     return rowCount;
+	}
 }

@@ -12,13 +12,18 @@
 		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
 	</definition>
 	
-	<definition name="irrigation.loginPage" template="/WEB-INF/jsp/home.jsp">		
+	<definition name="irrigation.loginPage" template="/WEB-INF/jsp/login.jsp">		
 	</definition>
 	
  	<definition name="irrigation.page2" template="/WEB-INF/jsp/page2.jsp">		
 	</definition>
 	
 	<definition name="irrigation.page3" template="/WEB-INF/jsp/page3.jsp">		
+	</definition>
+	
+	<definition name="irrigation.error" template="/WEB-INF/jsp/error.jsp">		
+	</definition>
+	<definition name="irrigation.homePage" template="/WEB-INF/jsp/homePage.jsp">		
 	</definition>
 	
 </tiles-definitions>
